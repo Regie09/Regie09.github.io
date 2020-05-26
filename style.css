@@ -9,3 +9,8 @@ p{
 .test{
   background-color: yellow;
 }
+
+h1 {
+   text-shadow: 0 1px 0 black, 0 -1px 0 black, 1px 0 0 black, -1px 0 0 black;
+   color: white;
+}
