@@ -6,6 +6,26 @@ p {
   backgound-color: yellow;
 }
 
+p.ex1 {
+  display: none;
+  color: red;
+}
+
+p.ex2 {
+  display: inline;
+  color: red;
+}
+
+p.ex3 {
+  display: block;
+  color: red;
+}
+
+p.ex4 {
+  display: inline-block;
+  color: red;
+}
+
 .test {
   background-color: yellow;
 }
@@ -15,8 +35,40 @@ h1 {
   color: white;
 }
 
+h3 {
+  font-size: 20px;
+  text-align: center;
+}
+
 #para {
   color: blue;
+}
+
+.myDIV {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: red;
+  left: 10px;
+  top: 100px;
+}
+
+.relative {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: red;
+  left: 10px;
+  top: 100px;
+}
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 5px;
+  background-color: #cae8ca;
+  border: 2px solid #4caf50;
 }
 
 #box {
@@ -41,6 +93,6 @@ h1 {
   border: 1px solid #666;
 }
 
-a[target=_blank] {
+a[target="_blank"] {
   background-color: yellow;
 }
