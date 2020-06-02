@@ -99,3 +99,7 @@ div.sticky {
 a[target="_blank"] {
   background-color: yellow;
 }
+
+
+/* center-align table columns */
+th, td {text-align: center;} 
