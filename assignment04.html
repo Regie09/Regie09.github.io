@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ClubMeNow:Lite - Add Club</title>
+	<title>ClubMeNow:Lite - Club Distances</title>
 	<link rel="icon" href="clubMeNow300x300.png" type="image/png" />
 	<!-- Bootstrap CSS -->
 	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css' />
@@ -9,18 +9,24 @@
 	<link rel='stylesheet' href='clubMeNow.css' />
 </head>
 
-<body>
+<body onload='appendTableRows();'>
 <div class='container'>
-	<h1>Add Club</h1>
-	<form action='clubDistanceList.html'>
-		<div class='form-group'>
-			<label for='clubName'></label>
-			<input name='clubName' id='clubName' type='text' class='form-control cmn_moreHeight' placeholder='Driver' required /><br>
-			<button class='btn btn-success cmn_fullHeight' onclick='addClub();'>&nbsp;&nbsp;&#x2714;&nbsp;&nbsp;</button> 
-			<button class='btn btn-danger cmn_fullHeight'  onclick='cancelClub();'>&nbsp;&nbsp;X&nbsp;&nbsp;</button><br><br>
-		</div>
-	</form>
-	
+	<h1>Club Distances</h1>
+	<table id='clubTable' class='table table-striped'>
+		<tr>
+		  <th class='cmn_hidden'>Club</th>
+		  <th class='cmn_alignRight cmn_fullHeight'>Avg</th>
+		  <th class='cmn_alignRight cmn_hidden'>Min</th>
+		  <th class='cmn_alignRight cmn_fullHeight'>Max</th>
+		  <th class='cmn_alignRight cmn_hidden'>Num</th>
+		  <th class='cmn_fullHeight'></th>
+		  <th class='cmn_fullHeight'>Club <button class='btn btn-warning cmn_noPadding cmn_fullHeight' onclick='displayClubEntry();'>&nbsp;&nbsp;+&nbsp;&nbsp;</button></th>
+		</tr>
+	</table>
+	<button class='btn btn-warning' onclick='undoLastShot();'>Undo</button> 
+	<button class='btn btn-danger' onclick='resetAllClubDistances();'>Reset</button> 
+	<button class='btn btn-info' onclick='displayAbout();'>About</button> 
+	<br>
 	<br>
 	<footer>Copyright &copy;2019 George Corser</footer>
 </div>
@@ -29,20 +35,7 @@
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js'></script>
 <!-- ClubMeNow custom JS -->
 <script src='clubMeNow.js'></script>
-<script>
-	// retrieve the row of the user-chosen club
-	var clubRow = parseInt(localStorage.getItem('club'));
-	// retrieve the "clubs" array
-	var clubs = JSON.parse(localStorage.getItem('clubs'));
-	// display the full clubName of the user-chosen club
-	var newClubName ;
-	var newClubDistances;
-	
-	function addClub() {
-                // your code here
-	}
-</script>
+<script>var clubs = loadClubDistances(); </script>
 
-	
 </body>
 </html>
