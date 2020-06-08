@@ -19,22 +19,33 @@ elem.children[4].children[1].onclick
   }
 
 // you don't have to define the function before you use it! 
-function add1 (elem) {
-  if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "1";
-  else {
+function add1(elem) {
+  let par = elem.children[1].innerHTML;
+  par = Number.parseInt(par);
+  x++;
+  if (elem.children[2].innerHTML == "-") {
+    elem.children[2].innerHTML = "1";
+    elem.children[3].innerHTML = 1 - par;
+  } else {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore + 1;
+    elem.children[3].innerHTML = currentScore - par + 1;
   }
 }
 
 //elem.children[2] is Score
 function subtract1 (elem) {
+  let par = elem.children[1].innerHTML;
+  par = Number.parseInt(par);
+  x--;
   if(elem.children[2].innerHTML == "-") elem.children[2].innerHTML = "-1";
-  else {
+    elem.children[3].innerHTML = -1 - par;
+  } else {
     let currentScore = elem.children[2].innerHTML;
     currentScore = Number.parseInt(currentScore);
     elem.children[2].innerHTML = currentScore - 1;
+    elem.children[3].innerHTML = currentScore - par - 1;
   }
 }
   
