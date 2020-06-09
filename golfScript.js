@@ -76,7 +76,7 @@ function subtract1 (num2) {
   j.children[3].innerHTML = over2;
   }
 
-function clear (num3) {
+function clearHole (num3) {
     console.log("invoked clear");
 var elem = document.getElementById(num3);
 elem.children[2].innerHTML = "-";
