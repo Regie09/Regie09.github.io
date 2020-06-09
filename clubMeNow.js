@@ -47,7 +47,7 @@ function resetAllClubDistances() {
 	var str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
 	// and refresh screen
-	window.location.href = "clubDistanceList.html"; 
+	window.location.href = "assignment04.html"; 
 }
 
 // append one row to HTML table for each row in "clubs" array
@@ -89,7 +89,7 @@ function appendTableRows() {
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
 	localStorage.setItem("club", c); // save chosen club
-	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
+	window.location.href = "assignment04.html"; // redirect to entry form
 }
 
 // replace the current "clubs" array with the previous one
@@ -175,7 +175,7 @@ function updateStats(shotDistance=0) {
 		var str = JSON.stringify(clubs);
 		localStorage.setItem("clubs", str);
 		// return to list screen
-		window.location.href = "clubDistanceList.html"; 
+		window.location.href = "assignment04.html"; 
 	}
 }
 
