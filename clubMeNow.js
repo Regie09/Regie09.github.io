@@ -89,7 +89,7 @@ function appendTableRows() {
 // navigate to "Distance Entry" screen
 function displayclubDistanceEntryForm(c) {
 	localStorage.setItem("club", c); // save chosen club
-	window.location.href = "assignment04.html"; // redirect to entry form
+	window.location.href = "clubDistanceEntry.html"; // redirect to entry form
 }
 
 // replace the current "clubs" array with the previous one
