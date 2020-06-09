@@ -49,7 +49,7 @@ function subtract1 (elem) {
   }
 }
   
- function calculateOver (elem) {
+ function calculate (elem) {
   if(elem.children[3].innerHTML == "-") elem.children[3].innerHTML = "-1";
   else {
     let currentScore = elem.children[3].innerHTML;
