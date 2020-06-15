@@ -97,7 +97,7 @@ function undoLastShot() {
 	clubs = JSON.parse(localStorage.getItem('clubsUndo'));
 	var str = JSON.stringify(clubs);
 	localStorage.setItem("clubs", str);
-	window.location.href = "clubDistanceList.html";
+	window.location.href = "assignment04.html";
         // your code here !
 }
 
