@@ -107,3 +107,124 @@ elem.children[3].innerHTML = "-";
   k.children[2].innerHTML = score3;
   k.children[3].innerHTML = over3;
 }
+
+function newCard(){
+      var temp1, temp2, temp3;
+      temp1 = document.getElementById("month");
+                    temp2 = document.getElementById("day");
+                    temp3 = document.getElementById("year");
+                    if(temp1.value == "" || temp2.value == "" || temp3.value == ""){
+                      temp3.value = "enter a date first"
+                    }
+                    else{
+        var cards = JSON.parse(localStorage.getItem("cards"));       
+        if(cards == null){
+          var rounds = new Array();
+            var cards = new Array();
+            for(var i = 0; i <= 18; i++){
+              var temp = [0, 0, 0];
+                if(i == 0){
+                    temp[0] = document.getElementById("month").value;
+                    temp[1] = document.getElementById("day").value;
+                    temp[2] = document.getElementById("year").value;
+                    rounds.push(temp);
+                }else{
+                  var x = document.getElementById(i);
+            temp[0] = Number.parseInt(x.children[1].innerHTML);
+            temp[1] = Number.parseInt(x.children[2].innerHTML);
+            temp[2] = Number.parseInt(x.children[3].innerHTML);
+            rounds.push(temp);
+                }
+            }
+            console.log(rounds);
+            cards.push(rounds);
+            var str = JSON.stringify(cards)
+            localStorage.setItem("cards", str);
+            console.log("first instanciation of rounds storage");
+                    //refresh page
+      window.location.href = "golfScorecards.html";
+        }
+        else{
+        // create new card
+        var rounds = new Array();
+        for(var i = 0; i <= 18; i++){
+          var temp = [0, 0, 0];
+            if(i == 0){
+                temp[0] = document.getElementById("month").value;
+                temp[1] = document.getElementById("day").value;
+                temp[2] = document.getElementById("year").value;
+                rounds.push(temp);
+            }else{
+        var x = document.getElementById(i);
+        //temp 0: save par, temp 1: save score, temp 2: save over 
+        temp[0] = Number.parseInt(x.children[1].innerHTML);
+        temp[1] = Number.parseInt(x.children[2].innerHTML);
+        temp[2] = Number.parseInt(x.children[3].innerHTML);
+        rounds.push(temp);
+            }
+        }
+        cards.push(rounds);
+        var str = JSON.stringify(cards);
+localStorage.setItem("cards", str);
+console.log("new card created and saved to storage");
+        //refresh page
+        window.location.href = "golfScorecards.html";
+        }
+      }
+
+    }
+    function updatePars(){
+    window.location.href = "updatePars.html"
+    }
+    function populateRounds(){
+    
+    }
+    function changePars(){
+        var pars = JSON.parse(localStorage.getItem("pars"));
+        if(pars){
+        for(var i = 0; i <= 17; i++){
+            document.getElementById(i + 1).children[1].innerHTML = pars[i];
+        }
+    }else{
+        pars = [4,5,4,3,4,5,4,3,4, 4,5,4,3,4,5,3,4,4];
+        var str = JSON.stringify(pars);
+        localStorage.setItem("pars", str);
+        changePars();
+    }
+    }
+
+function submitPars() {
+  var pars = new Array(17);
+  var x;
+  var j;
+  for (var i = 0; i < 18; i++) {
+    j = i + 1;
+    x = document.getElementById("p" + j);
+    pars[i] = x.value;
+    console.log(pars[i]);
+  }
+  var str = JSON.stringify(pars);
+  localStorage.setItem("pars", str);
+  window.location.href = "golfScorecards.html";
+}
+function add1Par(num) {
+  var x = document.getElementById("p" + num);
+  var total = x.value;
+  total++;
+  x.value = total;
+}
+function subtract1Par(num) {
+  var x = document.getElementById("p" + num);
+  var total = x.value;
+  total--;
+  x.value = total;
+}
+function deleteCards() {
+  var str = null;
+  localStorage.setItem("cards", str);
+  //refresh page
+  window.location.href = "golfScorecards.html";
+}
+
+
+ 
