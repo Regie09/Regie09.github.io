@@ -141,11 +141,9 @@ function newCard(){
             var str = JSON.stringify(cards)
             localStorage.setItem("cards", str);
             console.log("first instanciation of rounds storage");
-                    //refresh page
       window.location.href = "golfScorecards.html";
         }
         else{
-        // create new card
         var rounds = new Array();
         for(var i = 0; i <= 18; i++){
           var temp = [0, 0, 0];
@@ -156,7 +154,6 @@ function newCard(){
                 rounds.push(temp);
             }else{
         var x = document.getElementById(i);
-        //temp 0: save par, temp 1: save score, temp 2: save over 
         temp[0] = Number.parseInt(x.children[1].innerHTML);
         temp[1] = Number.parseInt(x.children[2].innerHTML);
         temp[2] = Number.parseInt(x.children[3].innerHTML);
@@ -167,7 +164,6 @@ function newCard(){
         var str = JSON.stringify(cards);
 localStorage.setItem("cards", str);
 console.log("new card created and saved to storage");
-        //refresh page
         window.location.href = "golfScorecards.html";
         }
       }
@@ -222,7 +218,6 @@ function subtract1Par(num) {
 function deleteCards() {
   var str = null;
   localStorage.setItem("cards", str);
-  //refresh page
   window.location.href = "golfScorecards.html";
 }
 
